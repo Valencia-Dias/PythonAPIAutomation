@@ -21,7 +21,7 @@ print('Before update ',response.json())
 def putRequest():
     response = requests.post(baseURl,headers=headers1,json=requestbody)
     res =response.json()
-    print(res)
+    print('After update ',res)
     assert response.status_code == 200,'Status code is not matching'
     # id = res['id']
     # assert id == 100,'Id is not matching'

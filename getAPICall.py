@@ -15,10 +15,12 @@ def getRequest():
 
 
 def getRequestOfUser():
-    id = getRequest()
-    response = requests.get(baseURl+'/'+id)
-    print(response.url)
-    # print(response.json())
+    id = getRequest()   
+    url= f'{baseURl}/{id}'
+    response = requests.get(url,headers=headers1)
+    res = response.json()
+    print(res['id'])
+    assert response.status_code == 200,'Status code is not matching'
 
 
 getRequestOfUser()
